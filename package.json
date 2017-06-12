@@ -1,0 +1,41 @@
+{
+    "name": "tdoc",
+    "version": "0.0.1",
+    "description": "前端工程文档开发工具",
+    "keywords": ["doc", "document"],
+    "main": "index.js",
+    "bin": {
+        "tdoc": "bin/tdoc"
+    },
+    "author": {
+        "name": "huyue",
+        "email": "hy1062887235@gmail.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/iuap-design/tdoc.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/iuap-design/tdoc/issues"
+    },
+    "engines": {
+        "node": ">=4"
+    },
+    "homepage": "https://github.com/iuap-design/tdoc#readme",
+    "dependencies": {
+        "art-template": "^3.0.3",
+        "atropa-jsformatter": "^0.1.2",
+        "colors": "^1.1.2",
+        "comment-parser": "^0.4.0",
+        "cpr": "^1.1.1",
+        "glob": "^7.0.3",
+        "json5": "^0.5.0",
+        "marked": "^0.3.5",
+        "mkdirp": "^0.5.1",
+        "optimist": "^0.6.1",
+        "through2": "^2.0.1",
+        "watch": "^0.17.1"
+    }
+}
