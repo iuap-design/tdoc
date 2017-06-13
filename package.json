@@ -1,5 +1,5 @@
 {
-    "name": "tdoc",
+    "name": "tdoc-cli",
     "version": "0.0.1",
     "description": "前端工程文档开发工具",
     "keywords": ["doc", "document"],
