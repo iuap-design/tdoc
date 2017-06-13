@@ -2,11 +2,11 @@
 
 从 NPM 中安装
 
-> npm install tdoc -g
+> npm install tdoc-cli -g
 
-[![npm version](https://badge.fury.io/js/tdoc.svg)](http://badge.fury.io/js/tdoc)
+[![npm version](https://badge.fury.io/js/tdoc-cli.svg)](http://badge.fury.io/js/tdoc-cli)
 
-![](https://nodei.co/npm/tdoc.png?downloads=true&downloadRank=true&stars=true)
+![](https://nodei.co/npm/tdoc-cli.png?downloads=true&downloadRank=true&stars=true)
 
 ## 构建命令
 

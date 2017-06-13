@@ -4,14 +4,14 @@
 
 前端工程文档生成工具
 
-[![npm version](https://badge.fury.io/js/tdoc.svg)](http://badge.fury.io/js/tdoc)
+[![npm version](https://badge.fury.io/js/tdoc-cli.svg)](http://badge.fury.io/js/tdoc-cli)
 
-![](https://nodei.co/npm/tdoc.png?downloads=true&downloadRank=true&stars=true)
+![](https://nodei.co/npm/tdoc-cli.png?downloads=true&downloadRank=true&stars=true)
 
 ## 安装
 
 ```
-npm install tdoc [-g]
+npm install tdoc-cli [-g]
 ```
 
 ## 使用方式
@@ -28,7 +28,7 @@ tdoc build
 ### 脚本
 
 ```javascript
-var tdoc = require("tdoc");
+var tdoc = require("tdoc-cli");
 
 tdoc.build('/path/to/project', options);
 ```
@@ -36,7 +36,7 @@ tdoc.build('/path/to/project', options);
 ### Gulp
 
 ```javascript
-var tdoc = require("tdoc");
+var tdoc = require("tdoc-cli");
 
 gulp.task('tdoc', function() {
     return gulp.src('./')

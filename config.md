@@ -72,10 +72,10 @@ module.exports = function(callback) {
         "title": "tdoc",
         "footer": "Made By YMFE Team. © 2014 - 2016",
         "home": "YMFE",
-        "homeUrl": "http://ymfe.org/",
+        "homeUrl": "http://tinper.org/",
         "navbars": [{ // 导航栏配置
             "name": "tdoc",
-            "url": "http://ymfe.org/tdoc/"
+            "url": "http://tinper.org/tdoc/"
         }]
     },
     "pages": [{
