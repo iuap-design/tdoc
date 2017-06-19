@@ -23,9 +23,8 @@ function execTemplate(destPath, tplPath, callback) {
             console.log('X 资源拷贝失败！'.red);
         } else {
             var tplFilePath = sysPath.join(tplPath, 'template.html');
-            var codeTplFilePath = sysPath.join(tplPath, 'code.html');
-            if (fs.existsSync(tplFilePath) && fs.existsSync(codeTplFilePath)) {
-                callback(fs.readFileSync(tplFilePath, 'utf-8'), fs.readFileSync(codeTplFilePath, 'utf-8'));
+            if (fs.existsSync(tplFilePath)) {
+                callback(fs.readFileSync(tplFilePath, 'utf-8'));
             } else {
                 console.log('X 模板读取失败！'.red);
             }
@@ -76,10 +75,9 @@ tdoc.build = function(cwd, conf, opt) {
         console.log('');
     }
 
-    execTemplate(destPath, tplPath, function(content, codeContent) {
+    execTemplate(destPath, tplPath, function(content) {
         conf.dest = destPath;
         conf.templateContent = content;
-        conf.codeTemplateContent = codeContent;
         build(content);
         if (opt.watch) {
             console.log('√ Start Watching .......'.green);
@@ -93,7 +91,6 @@ tdoc.build = function(cwd, conf, opt) {
                         cf.buildPages = buildPages;
                         cf.dest = destPath;
                         cf.templateContent = content;
-                        cf.codeTemplateContent = codeContent;
                         conf = cf;
                         build(content);
                     });
