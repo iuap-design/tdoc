@@ -1,8 +1,8 @@
 ## 配置文件
 
-配置文件可以以 `tdoc.config` 或者 `tdocfile.js` 的形式出现。
+配置文件以 `tdoc.config` 的形式出现。
 
-### 静态文件形式
+### 文件形式
 
 `tdoc.config` 的内容是 `JSON`，支持注释。
 
@@ -13,42 +13,6 @@
     "name": "tdoc",
      ...
 }
-```
-
-### 动态脚本形式
-
-`tdocfile.js` 可以 `exports` 一个 `Object` 配置，也可以 `exports` 一个 `Function` 用于执行获取配置。
-
-示例1：
-
-```js
-module.exports = {
-    "name": "tdoc",
-    ...
-};
-```
-
-示例2：
-
-```js
-module.exports = function() {
-    return {
-        "name": "tdoc",
-        ...
-    };
-};
-```
-
-示例3：(支持异步返回)
-
-```js
-module.exports = function(callback) {
-    // do someing
-    callback({
-        "name": "tdoc",
-        ...
-    });
-};
 ```
 
 ## 配置内容
@@ -86,7 +50,6 @@ module.exports = function(callback) {
             "description": "开始"
         },
         "content": "./README.md",  // 内容
-        "compile": "markdown", // 解析器，如果内容有固定的扩展名，此项可忽略
         "options": { // 此 Page 用的编译器的配置
             "menuLevel": 2
         }
@@ -108,58 +71,9 @@ module.exports = function(callback) {
             }]
         }
     }, {
-        "name": "component",
-        "title": "组件",
-        "banner": {
-            "title": "移动端组件",
-            "description": "组件"
-        },
-        "content": { // 多页配置，multi 为 true
-            "sidebar": true,
-            "multi": true, // 多页配置
-            "index": "./Libraries/extension/INTRO.md", // 首页配置
-            "pages": [{ // 每页配置
-                "name": "ListView",
-                "content": "./Libraries/extension/libs/ListView/QListView.js"
-            }, {
-                "name": "ScrollView",
-                "content": "./Libraries/extension/libs/ScrollView/ScrollView.js"
-            }]
-        }
+        "name":"FAQ",
+        "title":"FAQ",
+        "url": "https://github.com/iuap-design/tdoc/issues"
     }]
-}
-```
-
-### 解析器配置
-
-#### js
-
-支持文件类型：`.js`，`.jsx`
-
-```json
-{
-    "type": "component", // 类型，可选 component 和 lib，默认 component
-    "source": false // 是否生成源文件预览，默认 false
-}
-```
-
-#### css
-
-支持文件类型：`.css`，`.sass`，`.scss`
-
-```json
-{
-    "source": false // 是否生成源文件预览，默认 false
-}
-```
-
-#### markdown
-
-支持文件类型：`.md`，`.markdown`
-
-```json
-{
-    "menuLevel": 2, // 选取第几级 head 作为目录，默认 -1 没有目录
-    "subMeneLevel": 3 // 选取第几级 head 作为子目录，默认 menuLevel + 1
 }
 ```

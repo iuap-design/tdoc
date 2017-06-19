@@ -37,7 +37,7 @@
                     
                     <li class="">
                         
-                        <a href="usage.html">命令</a>
+                        <a href="usage.html">使用</a>
                         
                     </li>
                     
@@ -49,13 +49,7 @@
                     
                     <li class="">
                         
-                        <a href="comment.html">注释规则</a>
-                        
-                    </li>
-                    
-                    <li class="">
-                        
-                        <a href="release.html">版本</a>
+                        <a href="https://github.com/iuap-design/tdoc/issues" target="_blank">FAQ</a>
                         
                     </li>
                     
@@ -85,35 +79,16 @@
     <div class="row">
         <div class="col-md-9 markdown-body" role="main">
             
-            <h1 id="TDoc">TDoc</h1><h2 id="简介">简介</h2><p>前端工程文档生成工具</p>
+            <h2 id="简介">简介</h2><p>前端工程文档生成工具</p>
 <p><a href="http://badge.fury.io/js/tdoc-cli"><img src="https://badge.fury.io/js/tdoc-cli.svg" alt="npm version"></a></p>
 <p><img src="https://nodei.co/npm/tdoc-cli.png?downloads=true&amp;downloadRank=true&amp;stars=true" alt=""></p>
 <h2 id="安装">安装</h2><pre><code>npm install tdoc-cli [-g]
-</code></pre><h2 id="使用方式">使用方式</h2><h3 id="命令">命令</h3><pre><code>cd /path/to/project/
-tdoc build
-</code></pre><p>详细请查看<a href="./usage.html">命令使用说明</a>。</p>
-<h3 id="脚本">脚本</h3><pre><code class="lang-javascript">var tdoc = require(&quot;tdoc-cli&quot;);
-
-tdoc.build(&#39;/path/to/project&#39;, options);
-</code></pre>
-<h3 id="Gulp">Gulp</h3><pre><code class="lang-javascript">var tdoc = require(&quot;tdoc-cli&quot;);
-
-gulp.task(&#39;tdoc&#39;, function() {
-    return gulp.src(&#39;./&#39;)
-        .pipe(tdoc({
-            // 配置
-        }));
-});
-</code></pre>
-<h3 id="Grunt">Grunt</h3><pre><code class="lang-javascript">grunt.initConfig({
-    tdoc: {
-        // 配置
-    }
-});
-
-grunt.loadNpmTasks(&#39;tdoc&#39;);
-</code></pre>
-<p>配置及配置文件请查看 <a href="./config.html">配置说明</a>;</p>
+</code></pre><h2 id="使用方式">使用方式</h2><ul>
+<li><code>cd /path/to/project/</code>  进入项目目录</li>
+<li><code>tdoc init</code>  初始化tdoc配置文件，编写配置文件tdoc.config (配置及配置文件请查看 <a href="./config.html">配置说明</a>)</li>
+<li><code>cd tdoc build</code>  构建文档</li>
+</ul>
+<p>详细请查看<a href="./usage.html">命令使用方式说明</a>。</p>
 
         </div>
         <div class="col-md-3" role="complementary">
@@ -142,40 +117,6 @@ grunt.loadNpmTasks(&#39;tdoc&#39;);
                         <a href="#使用方式" >使用方式</a>
                         
                     </li>
-                    
-                    
-                    
-                    
-                    <ul class="nav" style="display:block">
-                    
-                        <li>
-                            <a href="#命令" >命令</a>
-                        </li>
-                    
-                    
-                    
-                    
-                    
-                        <li>
-                            <a href="#脚本" >脚本</a>
-                        </li>
-                    
-                    
-                    
-                    
-                    
-                        <li>
-                            <a href="#Gulp" >Gulp</a>
-                        </li>
-                    
-                    
-                    
-                    
-                    
-                        <li>
-                            <a href="#Grunt" >Grunt</a>
-                        </li>
-                    
                     
                     
                 </ul>

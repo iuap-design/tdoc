@@ -1,5 +1,3 @@
-# TDoc
-
 ## 简介
 
 前端工程文档生成工具
@@ -16,46 +14,8 @@ npm install tdoc-cli [-g]
 
 ## 使用方式
 
-### 命令
+- ```cd /path/to/project/ ```  进入项目目录
+- ```tdoc init ```  初始化tdoc配置文件，编写配置文件tdoc.config (配置及配置文件请查看 [配置说明](./config.md))
+- ```cd tdoc build ```  构建文档
 
-```
-cd /path/to/project/
-tdoc build
-```
-
-详细请查看[命令使用说明](./usage.md)。
-
-### 脚本
-
-```javascript
-var tdoc = require("tdoc-cli");
-
-tdoc.build('/path/to/project', options);
-```
-
-### Gulp
-
-```javascript
-var tdoc = require("tdoc-cli");
-
-gulp.task('tdoc', function() {
-    return gulp.src('./')
-        .pipe(tdoc({
-            // 配置
-        }));
-});
-```
-
-### Grunt
-
-```javascript
-grunt.initConfig({
-    tdoc: {
-        // 配置
-    }
-});
-
-grunt.loadNpmTasks('tdoc');
-```
-
-配置及配置文件请查看 [配置说明](./config.md);
+详细请查看[命令使用方式说明](./usage.md)。
