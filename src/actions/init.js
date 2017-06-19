@@ -26,9 +26,8 @@ module.exports = function(cwd, conf) {
             });
         }
     } else {
-        var confFilePath = sysPath.join(cwd, 'tdoc.config'),
-            jsConfFilePath = sysPath.join(cwd, 'tdocfile.js');
-        if (fs.existsSync(confFilePath) || fs.existsSync(jsConfFilePath)) {
+        var confFilePath = sysPath.join(cwd, 'tdoc.config');
+        if (fs.existsSync(confFilePath)) {
             console.log('X 配置文件已经存在!'.red);
         } else {
             fs.writeFileSync(confFilePath, JSON.stringify(configTPL, {}, 4), 'UTF-8');
