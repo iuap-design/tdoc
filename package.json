@@ -1,6 +1,6 @@
 {
     "name": "tdoc-cli",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "前端工程文档开发工具",
     "keywords": ["doc", "document"],
     "main": "index.js",
