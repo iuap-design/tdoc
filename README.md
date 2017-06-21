@@ -19,3 +19,9 @@ npm install tdoc-cli [-g]
 - ```tdoc build ```  构建文档
 
 详细请查看[命令使用方式说明](./usage.md)。
+
+## ToDo
+
+- [ ] 可以init出一个完整简单示例，方便用户能迅速入门
+- [ ] 要能结合gulp和browsersync
+- [ ] 能够起本地server服务预览 
