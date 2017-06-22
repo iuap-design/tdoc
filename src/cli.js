@@ -8,12 +8,14 @@ var optimist = require('optimist');
 var loadConfig = require('./utils/loadConfig.js');
 var packageJSON = require('../package.json');
 
+//显示版本信息
 function helpTitle() {
     console.info('');
     console.info('===================== tdoc ' + packageJSON.version + ' ====================');
     console.info('');
 }
 
+//对其空格文字
 function fixempty(str, limit) {
     var i, n = limit - str.length;
     if (n < 0) {
