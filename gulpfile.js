@@ -33,7 +33,7 @@ gulp.task('live', function() {
             directory: true
         }
     })
-    gulp.watch(path.html).on('change', browsersync.reload)
+    // gulp.watch(path.html).on('change', browsersync.reload)
 })
 
 //启动服务

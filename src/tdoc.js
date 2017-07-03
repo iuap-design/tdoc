@@ -31,6 +31,16 @@ function execTemplate(destPath, tplPath, callback) {
         }
     });
 }
+function startTime(){
+    var today=new Date()
+    var h=today.getHours()
+    var m=today.getMinutes()
+    var s=today.getSeconds()
+    h=checkTime(h)
+    m=checkTime(m)
+    s=checkTime(s)
+    return '[' + h + ':' + m + ':' + s + ']';
+}
 
 var tdoc = module.exports = function(data) {
     data = data || {};
@@ -79,22 +89,28 @@ tdoc.build = function(cwd, conf, opt) {
         conf.dest = destPath;
         conf.templateContent = content;
         build(content);
+        console.log('1');
         if (opt.watch) {
-            console.log('√ Start Watching .......'.green);
+            // console.log('√ Start Watching .......'.green);
             watch.watchTree(cwd, {
                 ignoreDirectoryPattern: new RegExp(rDest)
             }, function(path) {
-                var fileName = sysPath.basename(path);
-                if (fileName == 'tdocfile.js' || fileName == 'tdoc.config') {
-                    console.log('--> Reload Config ......'.gray);
+                var reg = /ydoc.json$|ydocfile.js$/gi;
+                var reg_doc = new RegExp('.md');
+                // 判断doc的配置文件是否变化，若变化则更新配置文件后构建文档
+                if(reg.test(path)){
+                    console.log((startTime()+'--> Reload Config ......').cyan);
                     loadConfig(cwd, function(cf) {
                         cf.buildPages = buildPages;
                         cf.dest = destPath;
                         cf.templateContent = content;
+                        cf.codeTemplateContent = codeContent;
                         conf = cf;
+
                         build(content);
                     });
-                } else {
+                }else if(reg_doc.test(path)){
+                    console.log((startTime()+'--> Reload md ......').cyan);
                     build(content);
                 }
             });
