@@ -26,12 +26,12 @@ module.exports = function(cwd, conf) {
             });
         }
     } else {
-        var confFilePath = sysPath.join(cwd, 'tdoc.config');
+        var confFilePath = sysPath.join(cwd, 'tdoc.config.json');
         if (fs.existsSync(confFilePath)) {
             console.log('X 配置文件已经存在!'.red);
         } else {
             fs.writeFileSync(confFilePath, JSON.stringify(configTPL, {}, 4), 'UTF-8');
-            console.log('√ 生成 tdoc.config 成功！'.green);
+            console.log('√ 生成 tdoc.config.json 成功！'.green);
         }
     }
 }
