@@ -89,7 +89,6 @@ tdoc.build = function(cwd, conf, opt) {
         conf.dest = destPath;
         conf.templateContent = content;
         build(content);
-        console.log('1');
         if (opt.watch) {
             // console.log('√ Start Watching .......'.green);
             watch.watchTree(cwd, {

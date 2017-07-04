@@ -23,7 +23,7 @@ if(config&&config.dest){
     path.html = config.dest;
 }
 
-/* 起服务，并监听各个资源，一旦有改动，就自动刷新页面 */
+/* 起服务*/
 gulp.task('live', function() {
     browsersync.init({
         port: 3333,
@@ -33,7 +33,6 @@ gulp.task('live', function() {
             directory: true
         }
     })
-    // gulp.watch(path.html).on('change', browsersync.reload)
 })
 
 //启动服务
