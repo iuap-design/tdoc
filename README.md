@@ -22,6 +22,6 @@ npm install tdoc-cli [-g]
 
 ## ToDo
 
-- [ ] 可以init出一个完整简单示例，方便用户能迅速入门
-- [ ] 要能结合gulp和browsersync
+- [ ] 可以new出一个完整简单示例，方便用户能迅速入门
+- [x] 要能结合gulp和browsersync
 - [x] 能够起本地server服务预览

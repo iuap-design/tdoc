@@ -32,6 +32,7 @@ module.exports = function(cwd, conf) {
         } else {
             fs.writeFileSync(confFilePath, JSON.stringify(configTPL, {}, 4), 'UTF-8');
             console.log('√ 生成 tdoc.config.json 成功！'.green);
+            console.log('√ 如想快速上手！可以查看配置说明，地址：https://github.com/iuap-design/tdoc/blob/master/doc/config.md#配置内容'.green);
         }
     }
 }
