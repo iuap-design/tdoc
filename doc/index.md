@@ -19,3 +19,26 @@ npm install tdoc-cli [-g]
 - ```tdoc build ```  构建文档
 
 详细请查看[命令使用方式说明](./usage.md)。
+
+## 使用其他方式
+
+1. 使用脚本：
+
+   ```javascript
+   var ydoc = require("ydoc");
+
+   ydoc.build('/path/to/project', options);
+   ```
+
+2. 使用Gulp：
+
+   ```javascript
+   var ydoc = require("ydoc");
+
+   gulp.task('ydoc', function() {
+       return gulp.src('./')
+           .pipe(ydoc({
+               // 配置
+           }));
+   });
+   ```
