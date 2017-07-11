@@ -1,7 +1,6 @@
 var fs = require('fs');
 var sysPath = require('path');
 var inquirer = require('inquirer');
-var cpr = require('cpr');
 
 var configTPL = {
     name: "",
@@ -36,6 +35,8 @@ module.exports = function(cwd, conf) {
             var filePath = dir + '/' + item;
             fs.writeFileSync(filePath, mdOjbect[item], 'UTF-8');
         }
+        var data = fs.readFileSync(confFilePath, 'utf8');
+        data = data.replace(/\/doc/g, '/'+input.dirName);
         if (fs.existsSync(confFilePath)) {
             console.log('X 配置文件已经存在!'.red);
             inquirer.prompt([{
@@ -44,31 +45,13 @@ module.exports = function(cwd, conf) {
                 name: 'ok'
             }]).then(function(res) {
                 if (res.ok) {
-                    cpr(sysPath.join(__dirname, '../json_temp'), cwd, {
-                        deleteFirst: true,
-                        overwrite: true,
-                        confirm: false
-                    }, function(err, files) {
-                        if (!err) {
-                            console.log('√ 覆盖原有 tdoc.config.json 成功！'.green);
-                        }
-                    });
-
-                } else {
-
+                    fs.writeFileSync(confFilePath, data, 'UTF-8');
+                    console.log('√ 覆盖原有 tdoc.config.json 成功！'.green);
                 }
             });
         } else {
-            cpr(sysPath.join(__dirname, '../json_temp'), cwd, {
-                deleteFirst: true,
-                overwrite: true,
-                confirm: false
-            }, function(err, files) {
-                if (!err) {
-                    console.log('√ 生成 tdoc.config.json 成功！'.green);
-                }
-            });
-
+            fs.writeFileSync(confFilePath, data, 'UTF-8');
+            console.log('√ 生成 tdoc.config.json 成功！'.green);
         }
     })
 }
