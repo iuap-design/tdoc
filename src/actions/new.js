@@ -35,7 +35,7 @@ module.exports = function(cwd, conf) {
             var filePath = dir + '/' + item;
             fs.writeFileSync(filePath, mdOjbect[item], 'UTF-8');
         }
-        var data = fs.readFileSync(confFilePath, 'utf8');
+        var data = fs.readFileSync(sysPath.join(cwd, './src/json_temp/tdoc.config.json'), 'utf8');
         data = data.replace(/\/doc/g, '/'+input.dirName);
         if (fs.existsSync(confFilePath)) {
             console.log('X 配置文件已经存在!'.red);
