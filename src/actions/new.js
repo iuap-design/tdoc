@@ -1,6 +1,7 @@
 var fs = require('fs');
 var sysPath = require('path');
 var inquirer = require('inquirer');
+var json = require('../json_temp/tdoc.config.json');
 
 var configTPL = {
     name: "",
@@ -25,6 +26,8 @@ module.exports = function(cwd, conf) {
         }
     }]).then(function(input) {
         var dir = sysPath.join(cwd, input.dirName);
+        var data = JSON.stringify(json, {}, 4);
+        data = data.replace(/\/doc/g, '/'+input.dirName);
         if (fs.existsSync(dir)) {
             console.log('X md文件夹已经存在!'.red);
         } else {
@@ -35,8 +38,7 @@ module.exports = function(cwd, conf) {
             var filePath = dir + '/' + item;
             fs.writeFileSync(filePath, mdOjbect[item], 'UTF-8');
         }
-        var data = fs.readFileSync(sysPath.join(cwd, './src/json_temp/tdoc.config.json'), 'utf8');
-        data = data.replace(/\/doc/g, '/'+input.dirName);
+
         if (fs.existsSync(confFilePath)) {
             console.log('X 配置文件已经存在!'.red);
             inquirer.prompt([{
@@ -55,4 +57,4 @@ module.exports = function(cwd, conf) {
         }
     })
 }
-module.exports.usage = '创建测试文件';
+module.exports.usage = '创建md模板文件和相对应的配置文件';

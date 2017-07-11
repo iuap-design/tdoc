@@ -1,5 +1,5 @@
 module.exports = {
-    new: require('./new.js'),
-    init: require('./init.js'),
+    init: require('./new.js'),
+    // init: require('./init.js'),
     build: require('./build.js')
 };
