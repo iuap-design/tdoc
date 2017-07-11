@@ -59,6 +59,8 @@ tdoc.init = actions.init;
 
 tdoc.new = actions.new;
 
+tdoc.server = actions.server;
+
 tdoc.build = function(cwd, conf, opt) {
     opt = opt || {};
     var template = opt.template || conf.template,

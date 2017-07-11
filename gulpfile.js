@@ -7,7 +7,7 @@ var gulp = require('gulp'),
 var path={};
 path.html = './_docs';
 var loadconfig = function(cwd){
-    var confPath = sysPath.join(cwd, 'tdoc.config'),
+    var confPath = sysPath.join(cwd, 'tdoc.config.json'),
         conf;
     if (fs.existsSync(confPath)) {
         try {

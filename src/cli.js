@@ -64,6 +64,8 @@ var cli = module.exports = {
                 });
             } else if (cmd == 'new' ) {
                 tdoc.new(cwd);
+            } else if (cmd == 'server') {
+                tdoc.server(cwd);
             }
 
         } else {
