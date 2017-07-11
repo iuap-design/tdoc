@@ -19,7 +19,7 @@
             "title": "Tdoc",
             "description": "开始"
         },
-        "content": "./11111/index.md"
+        "content": "./doc/index.md"
     }, {
         "name": "usage",
         "title": "使用",
@@ -27,7 +27,7 @@
             "title": "Tdoc",
             "description": "使用"
         },
-        "content": "./11111/usage.md"
+        "content": "./doc/usage.md"
     }, {
         "name": "config",
         "title": "配置",
@@ -35,7 +35,7 @@
             "title": "Tdoc",
             "description": "配置"
         },
-        "content": "./11111/config.md"
+        "content": "./doc/config.md"
     }, {
         "name":"FAQ",
         "title":"FAQ",
