@@ -62,6 +62,8 @@ var cli = module.exports = {
                 tdoc.init(cwd, {
                     template: argv.t || argv.template
                 });
+            } else if (cmd == 'new' ) {
+                tdoc.new(cwd);
             }
 
         } else {
