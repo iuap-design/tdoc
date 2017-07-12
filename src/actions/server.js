@@ -6,8 +6,6 @@ var serve = require('koa-static');
 var JSON5 = require('json5');
 var browsersync = require('browser-sync').create();
 
-
-
 module.exports = function(cwd) {
     var dest = './_docs';
     var loadconfig = function(cwd) {
@@ -16,7 +14,6 @@ module.exports = function(cwd) {
         if (fs.existsSync(confPath)) {
             try {
                 conf = JSON5.parse(fs.readFileSync(confPath, 'utf-8'));
-                console.log(conf);
             } catch (e) {}
             return conf;
         } else {
