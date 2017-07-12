@@ -3,6 +3,7 @@ var fs = require('fs');
 var path = require('path');
 var logger = require('koa-logger');
 var serve = require('koa-static');
+var JSON5 = require('json5');
 var browsersync = require('browser-sync').create();
 
 
@@ -15,6 +16,7 @@ module.exports = function(cwd) {
         if (fs.existsSync(confPath)) {
             try {
                 conf = JSON5.parse(fs.readFileSync(confPath, 'utf-8'));
+                console.log(conf);
             } catch (e) {}
             return conf;
         } else {
@@ -25,8 +27,6 @@ module.exports = function(cwd) {
     if (config && config.dest) {
         dest = config.dest;
     }
-    console.log(cwd);
-
     // var app = new Koa();
     //
     // app.use(async (ctx, next) => {
@@ -44,7 +44,6 @@ module.exports = function(cwd) {
     //
     // app.listen(8001);
     //
-    // console.log('server started at http://localhost:8001');
     browsersync.init({
         port: 8001,
         startPath: dest+'/index.html',//默认打开的初始地址，可以不加
