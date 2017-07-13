@@ -1,6 +1,6 @@
 ## 简介
 
-前端工程文档生成工具
+前端工程文档生成工具，方便开发者通过md文档能快速构建出系统完整的文档页面。
 
 [![npm version](https://badge.fury.io/js/tdoc-cli.svg)](http://badge.fury.io/js/tdoc-cli)
 
