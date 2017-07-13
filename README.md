@@ -26,19 +26,19 @@ npm install tdoc-cli [-g]
 1. 使用脚本：
 
    ```javascript
-   var ydoc = require("ydoc");
+   var tdoc = require("tdoc");
 
-   ydoc.build('/path/to/project', options);
+   tdoc.build('/path/to/project', options);
    ```
 
 2. 使用Gulp：
 
    ```javascript
-   var ydoc = require("ydoc");
+   var tdoc = require("tdoc");
 
-   gulp.task('ydoc', function() {
+   gulp.task('tdoc', function() {
        return gulp.src('./')
-           .pipe(ydoc({
+           .pipe(tdoc({
                // 配置
            }));
    });
