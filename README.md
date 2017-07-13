@@ -22,7 +22,7 @@ npm install tdoc-cli [-g]
 详细请查看[命令使用方式说明](./doc/usage.md)。
 
 ## 产出页面效果截图
-[tdoc页面效果截图]('./tdoc.png')
+<img src="./tdoc.png" />
 
 ## 使用其他方式
 
