@@ -54,3 +54,4 @@ npm install tdoc-cli [-g]
 - [x] 要能结合gulp和browsersync
 - [x] 能够起本地server服务预览
 - [ ] 在子目录页面中实现异步请求数据，解决了刷新页面的烦恼
+- [ ] 精简产出的页面中的source文件夹下的js和css文件
