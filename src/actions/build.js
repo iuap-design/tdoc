@@ -6,6 +6,7 @@ var artTemplate = require('art-template');
 var childProcess = require('child_process');
 var marked = require('marked');
 var glob = require('glob');
+var fse = require('fs-extra');
 
 var parsers = require('../parsers');
 
@@ -78,6 +79,20 @@ module.exports = function(cwd, conf) {
     conf.options = conf.options || {};
     var render = artTemplate.compile(conf.templateContent);
     var resources = conf.resources || {};
+    
+    // build增加其他静态资源输出
+    var basePath = sysPath.join(process.cwd(), conf.rootDir);
+    var outPath = conf.dest;
+    fse.copySync(basePath,outPath,{filter: function(single){
+        const fileType = sysPath.extname(single);
+        if(fileType != '.md'){
+            return true
+        } else {
+            return false
+        }
+    }});
+
+
     if (conf.pages) {
         conf.pages.forEach(function(page) {
             var data = {},

@@ -26,6 +26,9 @@ module.exports = function(cwd, conf) {
         }
     }]).then(function(input) {
         var dir = sysPath.join(cwd, input.dirName);
+        // weidong:增加dirName字段
+        json.rootDir = input.dirName;
+        
         var data = JSON.stringify(json, {}, 4);
         data = data.replace(/\/doc/g, '/'+input.dirName);
         if (fs.existsSync(dir)) {
