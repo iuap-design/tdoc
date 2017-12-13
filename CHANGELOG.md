@@ -1,5 +1,5 @@
 <a name="1.0.0"></a>
-# [1.0.0](https://github.com/iuap-design/tdoc/compare/v0.0.19...v1.0.0) (2017-12-13)
+# [1.0.0](https://github.com/iuap-design/tdoc/compare/v0.0.19...1.0.0) (2017-12-13)
 
 
 ### Features
