@@ -1,43 +1,55 @@
 {
-  "name": "tdoc-cli",
-  "version": "0.0.20",
-  "description": "前端工程文档开发工具",
-  "keywords": [
-    "doc",
-    "document"
-  ],
-  "main": "src/tdoc.js",
-  "bin": {
-    "tdoc": "bin/tdoc"
-  },
-  "author": "",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/iuap-design/tdoc.git"
-  },
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/iuap-design/tdoc/issues"
-  },
-  "engines": {
-    "node": ">=4"
-  },
-  "homepage": "https://github.com/iuap-design/tdoc#readme",
-  "dependencies": {
-    "art-template": "^3.0.3",
-    "atropa-jsformatter": "^0.1.2",
-    "browser-sync": "^2.18.12",
-    "colors": "^1.1.2",
-    "comment-parser": "^0.4.0",
-    "cpr": "^1.1.1",
-    "fs-extra": "^4.0.2",
-    "glob": "^7.0.3",
-    "inquirer": "^3.2.0",
-    "json5": "^0.5.0",
-    "marked": "^0.3.5",
-    "mkdirp": "^0.5.1",
-    "optimist": "^0.6.1",
-    "through2": "^2.0.1",
-    "watch": "^0.17.1"
+ "name": "tdoc-cli",
+ "version": "1.0.0",
+ "description": "前端工程文档开发工具",
+ "keywords": [
+  "doc",
+  "document"
+ ],
+ "scripts": {
+  "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+  "pub": "bee-tools run pub"
+ },
+ "main": "src/tdoc.js",
+ "bin": {
+  "tdoc": "bin/tdoc"
+ },
+ "author": "",
+ "repository": {
+  "type": "git",
+  "url": "git+https://github.com/iuap-design/tdoc.git"
+ },
+ "license": "ISC",
+ "bugs": {
+  "url": "https://github.com/iuap-design/tdoc/issues"
+ },
+ "engines": {
+  "node": ">=4"
+ },
+ "homepage": "https://github.com/iuap-design/tdoc#readme",
+ "dependencies": {
+  "art-template": "^3.0.3",
+  "atropa-jsformatter": "^0.1.2",
+  "browser-sync": "^2.18.12",
+  "colors": "^1.1.2",
+  "comment-parser": "^0.4.0",
+  "cpr": "^1.1.1",
+  "fs-extra": "^4.0.2",
+  "glob": "^7.0.3",
+  "inquirer": "^3.2.0",
+  "json5": "^0.5.0",
+  "marked": "^0.3.5",
+  "mkdirp": "^0.5.1",
+  "optimist": "^0.6.1",
+  "through2": "^2.0.1",
+  "watch": "^0.17.1"
+ },
+ "devDependencies": {
+  "cz-conventional-changelog": "^2.1.0"
+ },
+ "config": {
+  "commitizen": {
+   "path": "./node_modules/cz-conventional-changelog"
   }
+ }
 }
