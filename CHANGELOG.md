@@ -1,5 +1,10 @@
-<a name="0.0.20"></a>
-## [0.0.20](https://github.com/iuap-design/tdoc/compare/v0.0.19...v0.0.20) (2017-12-13)
+<a name="1.0.0"></a>
+# [1.0.0](https://github.com/iuap-design/tdoc/compare/v0.0.19...v1.0.0) (2017-12-13)
+
+
+### Features
+
+* **package.json:** tdoc-V1.0.0强势登场！赶快来体验吧！与其让时间给生命一个界限，不如让空间给生命一个境界！ ([c9a0ae7](https://github.com/iuap-design/tdoc/commit/c9a0ae7))
 
 
 
