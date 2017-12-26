@@ -71,6 +71,26 @@
             }]
         }
     }, {
+        "name": "component",
+        "title": "组件",
+        "banner": {
+            "title": "移动端组件",
+            "description": "组件"
+        },
+        "content": { // 多页配置，multi 为 true
+            "sidebar": true, //是否显示侧边目录
+            "multi": true, // 多页配置
+            "index": "./Libraries/extension/INTRO.md", // 首页配置
+            "pages": [{ // 每页配置
+                "name": "ListView",
+                "index": "list", // 修改默认路径名
+                "content": "./Libraries/extension/libs/ListView/QListView.js"
+            }, {
+                "name": "ScrollView",
+                "content": "./Libraries/extension/libs/ScrollView/ScrollView.js"
+            }]
+        }
+    }, {
         "name":"FAQ",
         "title":"FAQ",
         "url": "https://github.com/iuap-design/tdoc/issues"

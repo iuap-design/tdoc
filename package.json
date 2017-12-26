@@ -8,7 +8,8 @@
  ],
  "scripts": {
   "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
-  "pub": "bee-tools run pub"
+  "pub": "bee-tools run pub",
+  "build": "tdoc build"
  },
  "main": "src/tdoc.js",
  "bin": {
