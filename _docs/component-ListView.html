@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Tdoc 使用</title>
+    <title>Tdoc 组件</title>
     <link rel="stylesheet" href="source/app.css"/>
     <link rel="stylesheet" href="source/highlight.min.css">
 </head>
@@ -35,7 +35,7 @@
                         
                     </li>
                     
-                    <li class="active">
+                    <li class="">
                         
                         <a href="usage.html">使用</a>
                         
@@ -47,7 +47,7 @@
                         
                     </li>
                     
-                    <li class="">
+                    <li class="active">
                         
                         <a href="component.html">组件</a>
                         
@@ -69,8 +69,8 @@
 
 <div class="docs-header" id="content" style="margin-bottom:0">
     <div class="container">
-        <h1>Tdoc</h1>
-        <p>使用</p>
+        <h1>移动端组件</h1>
+        <p>组件</p>
     </div>
 </div>
 
@@ -85,21 +85,89 @@
     <div class="row">
         <div class="col-md-9 markdown-body" role="main">
             
-            <h2 id="安装">安装</h2><p>从 NPM 中安装</p>
-<blockquote>
-<p>npm install tdoc-cli -g</p>
-</blockquote>
-<p><a href="http://badge.fury.io/js/tdoc-cli"><img src="https://badge.fury.io/js/tdoc-cli.svg" alt="npm version"></a></p>
-<p><img src="https://nodei.co/npm/tdoc-cli.png?downloads=true&amp;downloadRank=true&amp;stars=true" alt=""></p>
-<h2 id="初始化命令">初始化命令</h2><blockquote>
-<p>tdoc init</p>
-</blockquote>
-<h2 id="构建命令">构建命令</h2><blockquote>
-<p>tdoc build</p>
-</blockquote>
-<h2 id="启动服务命令">启动服务命令</h2><blockquote>
-<p>tdoc server</p>
-</blockquote>
+            <h2 id="配置文件">配置文件</h2><p>配置文件以 <code>tdoc.config</code> 的形式出现。</p>
+<h3 id="文件形式">文件形式</h3><p><code>tdoc.config</code> 的内容是 <code>JSON</code>，支持注释。</p>
+<p>示例：</p>
+<pre><code>{
+    &quot;name&quot;: &quot;tdoc&quot;,
+     ...
+}
+</code></pre><h2 id="配置内容">配置内容</h2><h3 id="整体配置说明">整体配置说明</h3><p>示例:</p>
+<pre><code class="lang-json">{
+    &quot;name&quot;: &quot;tdoc&quot;,
+    &quot;dest&quot;: &quot;path/to/destination&quot;, // 默认为  &quot;_docs&quot;
+    &quot;examplePath&quot;: &quot;./examples&quot;, // 示例代码路径 默认 &quot;./&quot;
+    &quot;template&quot;: &quot;path/to/templte&quot;, // 默认使用 tdoc 内置的模板
+    &quot;options&quot;: { // 通用编译器配置
+        &quot;markdwon&quot;: { // 对于 markdown 编译器进行统一配置
+            &quot;memuLevel&quot;: 2
+        }
+    },
+    &quot;common&quot;: { // 通用配置，包括主页配置等
+        &quot;title&quot;: &quot;tdoc&quot;,
+        &quot;footer&quot;: &quot;Made By YMFE Team. © 2014 - 2016&quot;,
+        &quot;home&quot;: &quot;YMFE&quot;,
+        &quot;homeUrl&quot;: &quot;http://tinper.org/&quot;,
+        &quot;navbars&quot;: [{ // 导航栏配置
+            &quot;name&quot;: &quot;tdoc&quot;,
+            &quot;url&quot;: &quot;http://tinper.org/tdoc/&quot;
+        }]
+    },
+    &quot;pages&quot;: [{
+        &quot;name&quot;: &quot;index&quot;, // Page Name 会根据他生成 html 文件，例  index.html
+        &quot;title&quot;: &quot;开始&quot;, // Page Title
+        &quot;banner&quot;: { // Banner 配置
+            &quot;title&quot;: &quot;tdoc&quot;,
+            &quot;description&quot;: &quot;开始&quot;
+        },
+        &quot;content&quot;: &quot;./README.md&quot;,  // 内容
+        &quot;options&quot;: { // 此 Page 用的编译器的配置
+            &quot;menuLevel&quot;: 2
+        }
+    }, {
+        &quot;name&quot;: &quot;hybird&quot;,
+        &quot;title&quot;: &quot;混合开发&quot;,
+        &quot;intro&quot;: &quot;document/README.md&quot;, // 介绍
+        &quot;content&quot;: { // 单页多模块配置
+            &quot;sidebar&quot;: true, // 是否显示侧边目录
+            &quot;blocks&quot;: [{
+                &quot;name&quot;: &quot;简介&quot;, // 标题
+                &quot;content&quot;: &quot;document/hybrid/README.md&quot; // 内容
+            }, {
+                &quot;name&quot;: &quot;Hybrid&quot; // 只有标题，做目录和分割用
+            }, {
+                &quot;name&quot;: &quot;说明&quot;,
+                &quot;sub&quot;: true, // 标题在目录里已子目录形式显示
+                &quot;content&quot;: &quot;modules/hybrid/framework/README.md&quot;
+            }]
+        }
+    }, {
+        &quot;name&quot;: &quot;component&quot;,
+        &quot;title&quot;: &quot;组件&quot;,
+        &quot;banner&quot;: {
+            &quot;title&quot;: &quot;移动端组件&quot;,
+            &quot;description&quot;: &quot;组件&quot;
+        },
+        &quot;content&quot;: { // 多页配置，multi 为 true
+            &quot;sidebar&quot;: true, //是否显示侧边目录
+            &quot;multi&quot;: true, // 多页配置
+            &quot;index&quot;: &quot;./Libraries/extension/INTRO.md&quot;, // 首页配置
+            &quot;pages&quot;: [{ // 每页配置
+                &quot;name&quot;: &quot;ListView&quot;,
+                &quot;index&quot;: &quot;list&quot;, // 修改默认路径名
+                &quot;content&quot;: &quot;./Libraries/extension/libs/ListView/QListView.js&quot;
+            }, {
+                &quot;name&quot;: &quot;ScrollView&quot;,
+                &quot;content&quot;: &quot;./Libraries/extension/libs/ScrollView/ScrollView.js&quot;
+            }]
+        }
+    }, {
+        &quot;name&quot;:&quot;FAQ&quot;,
+        &quot;title&quot;:&quot;FAQ&quot;,
+        &quot;url&quot;: &quot;https://github.com/iuap-design/tdoc/issues&quot;
+    }]
+}
+</code></pre>
 
         </div>
         <div class="col-md-3" role="complementary">
@@ -109,31 +177,35 @@
                     
                     <li>
                         
-                        <a href="#安装" >安装</a>
+                        <a href="component-ListView.html" style="color:#0088a4">ListView</a>
                         
                     </li>
                     
                     
                     
+                    
+                    <ul class="nav" style="display:block">
+                    
+                        <li>
+                            <a href="#配置文件" >配置文件</a>
+                        </li>
+                    
+                    
+                    
+                    
+                    
+                        <li>
+                            <a href="#配置内容" >配置内容</a>
+                        </li>
+                    
+                    </ul>
+                    
+                    
+                    
+                    
                     <li>
                         
-                        <a href="#初始化命令" >初始化命令</a>
-                        
-                    </li>
-                    
-                    
-                    
-                    <li>
-                        
-                        <a href="#构建命令" >构建命令</a>
-                        
-                    </li>
-                    
-                    
-                    
-                    <li>
-                        
-                        <a href="#启动服务命令" >启动服务命令</a>
+                        <a href="component-ScrollView.html" >ScrollView</a>
                         
                     </li>
                     

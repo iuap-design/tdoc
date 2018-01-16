@@ -49,6 +49,12 @@
                     
                     <li class="">
                         
+                        <a href="component.html">组件</a>
+                        
+                    </li>
+                    
+                    <li class="">
+                        
                         <a href="https://github.com/iuap-design/tdoc/issues" target="_blank">FAQ</a>
                         
                     </li>
@@ -133,6 +139,26 @@
                 &quot;name&quot;: &quot;说明&quot;,
                 &quot;sub&quot;: true, // 标题在目录里已子目录形式显示
                 &quot;content&quot;: &quot;modules/hybrid/framework/README.md&quot;
+            }]
+        }
+    }, {
+        &quot;name&quot;: &quot;component&quot;,
+        &quot;title&quot;: &quot;组件&quot;,
+        &quot;banner&quot;: {
+            &quot;title&quot;: &quot;移动端组件&quot;,
+            &quot;description&quot;: &quot;组件&quot;
+        },
+        &quot;content&quot;: { // 多页配置，multi 为 true
+            &quot;sidebar&quot;: true, //是否显示侧边目录
+            &quot;multi&quot;: true, // 多页配置
+            &quot;index&quot;: &quot;./Libraries/extension/INTRO.md&quot;, // 首页配置
+            &quot;pages&quot;: [{ // 每页配置
+                &quot;name&quot;: &quot;ListView&quot;,
+                &quot;index&quot;: &quot;list&quot;, // 修改默认路径名
+                &quot;content&quot;: &quot;./Libraries/extension/libs/ListView/QListView.js&quot;
+            }, {
+                &quot;name&quot;: &quot;ScrollView&quot;,
+                &quot;content&quot;: &quot;./Libraries/extension/libs/ScrollView/ScrollView.js&quot;
             }]
         }
     }, {

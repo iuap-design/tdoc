@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Tdoc 使用</title>
+    <title>Tdoc 组件</title>
     <link rel="stylesheet" href="source/app.css"/>
     <link rel="stylesheet" href="source/highlight.min.css">
 </head>
@@ -35,7 +35,7 @@
                         
                     </li>
                     
-                    <li class="active">
+                    <li class="">
                         
                         <a href="usage.html">使用</a>
                         
@@ -47,7 +47,7 @@
                         
                     </li>
                     
-                    <li class="">
+                    <li class="active">
                         
                         <a href="component.html">组件</a>
                         
@@ -69,8 +69,8 @@
 
 <div class="docs-header" id="content" style="margin-bottom:0">
     <div class="container">
-        <h1>Tdoc</h1>
-        <p>使用</p>
+        <h1>移动端组件</h1>
+        <p>组件</p>
     </div>
 </div>
 
@@ -85,21 +85,36 @@
     <div class="row">
         <div class="col-md-9 markdown-body" role="main">
             
-            <h2 id="安装">安装</h2><p>从 NPM 中安装</p>
-<blockquote>
-<p>npm install tdoc-cli -g</p>
-</blockquote>
+            <h2 id="简介">简介</h2><p>前端工程文档生成工具</p>
 <p><a href="http://badge.fury.io/js/tdoc-cli"><img src="https://badge.fury.io/js/tdoc-cli.svg" alt="npm version"></a></p>
 <p><img src="https://nodei.co/npm/tdoc-cli.png?downloads=true&amp;downloadRank=true&amp;stars=true" alt=""></p>
-<h2 id="初始化命令">初始化命令</h2><blockquote>
-<p>tdoc init</p>
-</blockquote>
-<h2 id="构建命令">构建命令</h2><blockquote>
-<p>tdoc build</p>
-</blockquote>
-<h2 id="启动服务命令">启动服务命令</h2><blockquote>
-<p>tdoc server</p>
-</blockquote>
+<h2 id="安装">安装</h2><pre><code>npm install tdoc-cli [-g]
+</code></pre><h2 id="使用方式">使用方式</h2><ul>
+<li><code>cd /path/to/project/</code>  进入项目目录</li>
+<li><code>tdoc init</code>  初始化tdoc配置文件，编写配置文件tdoc.config (配置及配置文件请查看 <a href="./config.html">配置说明</a>)</li>
+<li><code>tdoc build</code>  构建文档</li>
+<li><code>tdoc server</code> 启动服务，访问文档页面效果</li>
+</ul>
+<p>详细请查看<a href="./usage.html">命令使用方式说明</a>。</p>
+<h2 id="使用其他方式">使用其他方式</h2><ol>
+<li><p>使用脚本：</p>
+<pre><code class="lang-javascript">var tdoc = require(&quot;tdoc&quot;);
+
+tdoc.build(&#39;/path/to/project&#39;, options);
+</code></pre>
+</li>
+<li><p>使用Gulp：</p>
+<pre><code class="lang-javascript">var tdoc = require(&quot;tdoc&quot;);
+
+gulp.task(&#39;tdoc&#39;, function() {
+    return gulp.src(&#39;./&#39;)
+        .pipe(tdoc({
+            // 配置
+        }));
+});
+</code></pre>
+</li>
+</ol>
 
         </div>
         <div class="col-md-3" role="complementary">
@@ -109,7 +124,7 @@
                     
                     <li>
                         
-                        <a href="#安装" >安装</a>
+                        <a href="component-ListView.html" >ListView</a>
                         
                     </li>
                     
@@ -117,23 +132,7 @@
                     
                     <li>
                         
-                        <a href="#初始化命令" >初始化命令</a>
-                        
-                    </li>
-                    
-                    
-                    
-                    <li>
-                        
-                        <a href="#构建命令" >构建命令</a>
-                        
-                    </li>
-                    
-                    
-                    
-                    <li>
-                        
-                        <a href="#启动服务命令" >启动服务命令</a>
+                        <a href="component-ScrollView.html" >ScrollView</a>
                         
                     </li>
                     

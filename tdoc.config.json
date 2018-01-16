@@ -37,6 +37,26 @@
         },
         "content": "./doc/config.md"
     }, {
+        "name": "component",
+        "title": "组件",
+        "banner": {
+            "title": "移动端组件",
+            "description": "组件"
+        },
+        "content": { 
+            "sidebar": true, 
+            "multi": true,
+            "index": "./doc/index.md", 
+            "pages": [{
+                "name": "ListView",
+                "index": "list", 
+                "content": "./doc/config.md"
+            }, {
+                "name": "ScrollView",
+                "content": "./doc/usage.md"
+            }]
+        }
+    }, {
         "name":"FAQ",
         "title":"FAQ",
         "url": "https://github.com/iuap-design/tdoc/issues"

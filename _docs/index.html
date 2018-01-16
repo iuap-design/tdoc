@@ -49,6 +49,12 @@
                     
                     <li class="">
                         
+                        <a href="component.html">组件</a>
+                        
+                    </li>
+                    
+                    <li class="">
+                        
                         <a href="https://github.com/iuap-design/tdoc/issues" target="_blank">FAQ</a>
                         
                     </li>
@@ -92,17 +98,17 @@
 <p>详细请查看<a href="./usage.html">命令使用方式说明</a>。</p>
 <h2 id="使用其他方式">使用其他方式</h2><ol>
 <li><p>使用脚本：</p>
-<pre><code class="lang-javascript">var ydoc = require(&quot;ydoc&quot;);
+<pre><code class="lang-javascript">var tdoc = require(&quot;tdoc&quot;);
 
-ydoc.build(&#39;/path/to/project&#39;, options);
+tdoc.build(&#39;/path/to/project&#39;, options);
 </code></pre>
 </li>
 <li><p>使用Gulp：</p>
-<pre><code class="lang-javascript">var ydoc = require(&quot;ydoc&quot;);
+<pre><code class="lang-javascript">var tdoc = require(&quot;tdoc&quot;);
 
-gulp.task(&#39;ydoc&#39;, function() {
+gulp.task(&#39;tdoc&#39;, function() {
     return gulp.src(&#39;./&#39;)
-        .pipe(ydoc({
+        .pipe(tdoc({
             // 配置
         }));
 });
